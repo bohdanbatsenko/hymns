@@ -244,8 +244,17 @@ background: none;
     }
   }
 }
- 
 
+.font-switcher {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 1rem 2rem;
+  display: flex;
+  gap: 8px;
+  z-index: 3;
 
-/* :where([class^="card"])
-&[class*="--bordered"] */
+  button {
+    cursor: pointer;
+  }
+}
