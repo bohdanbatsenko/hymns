@@ -1,0 +1,251 @@
+/* A basic, modern CSS reset for 2025 */
+@layer reset {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+ 
+* {
+  margin: 0;
+}
+
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+    margin: 0;
+  }
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  input, button, textarea, select {
+    font: inherit;
+  }
+
+  ul[role='list'], ol[role='list'] {
+    list-style: none;
+  }
+
+  html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: pretty;
+  }
+}
+
+
+.main-header {
+  width: 100%;
+  position: fixed;
+  background: white;
+  z-index: 9;
+  height: 52px;
+}
+nav {
+  padding: 5px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    height: 100%;
+  z-index: 1;
+}
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+nav .logo img {
+  height: 25px;
+  width: auto;
+  margin-right: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+nav ul li {
+  margin-left: 1.5rem;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 95%;
+  font-weight: 400;
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+
+nav ul li a:hover {
+  background-color: #f5f5f5;
+}
+
+.hamburger {
+background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 1px;
+  background-color: #1f1f1f;
+  display: block;
+  margin: 7px auto;
+  transition: all 0.3s ease-in-out;
+}
+.hamburger-active {
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.6s;
+  transform: rotate(45deg);
+}
+
+.hamburger-active .line:nth-child(2) {
+  width: 0px;
+}
+
+.hamburger-active .line:nth-child(1),
+.hamburger-active .line:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.hamburger-active .line:nth-child(1) {
+  transform: translateY(12px);
+}
+
+.hamburger-active .line:nth-child(3) {
+  transform: translateY(-5px) rotate(90deg);
+}
+
+.menubar {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 100vh;
+  padding: 20% 16px;
+  background: rgba(255, 255, 255);
+  transition: all 0.5s ease-in;
+  z-index: 2;
+}
+.active {
+  left: 0;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.menubar ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.menubar ul li {
+  display: inline-block;
+  margin-bottom: 32px;
+}
+
+.menubar ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 10px 15px;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.menubar ul li a:hover {
+  background-color: #f5f5f5;
+}
+@media screen and (max-width: 790px) {
+  .hamburger {
+    display: block;
+  }
+  nav ul {
+    display: none;
+  }
+}
+
+.main {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 52px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.hymn-header {
+  margin-top: 30px;
+  margin-bottom: 14px;
+
+  .number, .title {
+    display: inline-block;
+  }
+
+  .number {
+    margin-right: 6px;
+  }
+}
+
+.hymn-body {
+  counter-reset: verse-counter;
+
+  .verse,
+  .chorus {
+    span {
+      display: block;
+    }
+  }
+
+  &:not(.no-chorus) .verse {
+    margin-bottom: 32px;
+  }
+
+  .verse {
+    margin-bottom: 16px;
+
+    &:not(.not-numbering) span:first-child::before {
+        counter-increment: verse-counter;
+        content: counter(verse-counter) ". ";
+        display: inline-block;
+        margin-right: 5px;
+    }
+  }
+
+  .chorus {
+    font-weight: 700;
+    font-style: italic;
+    position: relative;
+    margin-bottom: 16px;
+
+    &::before {
+      content: 'Приспів:';
+      position: absolute;
+      font-weight: normal;
+      font-style: normal;
+      font-size: 14px;
+      top: -20px;
+      left: 0;
+    }
+  }
+}
+ 
+
+
+/* :where([class^="card"])
+&[class*="--bordered"] */
