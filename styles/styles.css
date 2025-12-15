@@ -250,6 +250,7 @@ background: none;
   bottom: 0;
   right: 0;
   padding: 1rem 2rem;
+  font-size: 1.8rem;
   display: flex;
   gap: 8px;
   z-index: 3;
