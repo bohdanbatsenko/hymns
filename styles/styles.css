@@ -140,6 +140,7 @@ background: none;
   background: rgba(255, 255, 255);
   transition: all 0.5s ease-in;
   z-index: 2;
+  overflow: scroll;
 }
 .active {
   left: 0;
