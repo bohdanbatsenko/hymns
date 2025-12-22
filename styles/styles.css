@@ -263,6 +263,10 @@ nav ul li a:hover {
       left: 0;
     }
   }
+
+  p.chorus + p.chorus {
+    margin-top: 40px;
+  }
 }
 
 .font-switcher {
