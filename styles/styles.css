@@ -180,10 +180,11 @@ nav ul li a:hover {
   .menubar {
     padding: 11% 16px 10px;
     justify-content: center;
+    overflow-y: scroll;
 
     ul {
       width: 100%;
-      overflow-y: scroll;
+      /* overflow-y: scroll; */
 
       li {
         margin-bottom: 16px;
