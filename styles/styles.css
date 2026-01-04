@@ -226,6 +226,11 @@ nav ul li a:hover {
   transform: translateY(-5%);
   transition: all .6s ease-in-out;
 }
+/* @media screen and (max-width: 790px) {
+  .hymn-item {
+    transform: translateY(-2%);
+  }
+} */
 .js-item-active {
   opacity: 1;
   transform: translateY(0);
@@ -242,6 +247,10 @@ nav ul li a:hover {
   .number {
     margin-right: 6px;
   }
+}
+
+.hymn-audio {
+  margin-bottom: 12px;
 }
 
 .hymn-body {
